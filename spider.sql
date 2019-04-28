@@ -1,7 +1,7 @@
 create table if not exists Category(
     `cateid` int(11) NOT NULL AUTO_INCREMENT,
     `cname` varchar(50) NOT NULL,
-    `created` datetime(6) NOT NULL,
+    `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary key(`cateid`),
     unique key `cname` (`cname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -31,4 +31,12 @@ create table if not exists Chapter(
     primary key(`cid`),
     CONSTRAINT `chapter_novel_nid` FOREIGN KEY (`nid`) REFERENCES `Novel` (`nid`) on delete SET NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+insert into Category(cname) values("玄幻");
+insert into Category(cname) values("修真");
+insert into Category(cname) values("都市");
+insert into Category(cname) values("穿越");
+insert into Category(cname) values("网游");
+insert into Category(cname) values("科幻");
+insert into Category(cname) values("其他");
+insert into Category(cname) values("排行榜");
+insert into Category(cname) values("全本");
